@@ -5,7 +5,6 @@ metadata:
   name: ollama
   labels:
     app.kubernetes.io/part-of: app
-    app.kubernetes.io/part-of: ollama
 ---
 apiVersion: v1
 kind: Namespace

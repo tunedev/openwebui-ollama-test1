@@ -4,7 +4,6 @@ metadata:
   name: openwebui-data
   namespace: open-webui
   labels:
-    app.kubernetes.io/part-of: open-webui
     app.kubernetes.io/part-of: app
 spec:
   accessModes: 

@@ -4,7 +4,6 @@ metadata:
   name: ollama-models
   namespace: ollama
   labels:
-    app.kubernetes.io/part-of: ollama
     app.kubernetes.io/part-of: app
 spec:
   accessModes: 
