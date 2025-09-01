@@ -26,6 +26,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps/openweb-ui/overlay/staging
+  path: ./apps/open-web/overlay/staging
   dependsOn:
     - name: apps-ollama 
