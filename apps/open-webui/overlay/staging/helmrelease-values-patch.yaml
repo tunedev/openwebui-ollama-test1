@@ -25,4 +25,6 @@ spec:
     service:
       type: ClusterIP
       port: 8080
+    ollama:
+      enabled: false
       
