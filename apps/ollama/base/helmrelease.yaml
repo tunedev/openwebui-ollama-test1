@@ -7,13 +7,13 @@ metadata:
 spec:
   interval: 15m
   chart:
-  spec:
-    chart: ollama
-    version: "*"                 # pin/adjust as you prefer
-    sourceRef:
-      kind: HelmRepository
-      name: otwld
-      namespace: flux-system
+    spec:
+      chart: ollama
+      version: "*"                 # pin/adjust as you prefer
+      sourceRef:
+        kind: HelmRepository
+        name: otwld
+        namespace: flux-system
   install:
     remediation:
       retries: 3
