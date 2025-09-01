@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+patches:
+  - path: helmrelease-values-patch.yaml
+    target:
+      kind: HelmRelease
+      name: open-webui
+      namespace: flux-system
+  - path: openai-httproute-patch.yaml
+    target:
+      group: gateway.networking.k8s.io
+      version: v1
+      kind: HTTPRoute
+      name: open-webui
+      namespace: open-webui

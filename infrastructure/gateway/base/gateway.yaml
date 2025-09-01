@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: public
+  namespace: nginx-gateway     
+  labels:
+    app.kubernetes.io/part-of: platform
+spec:
+  gatewayClassName: nginx
+  listeners:
+    # Keep 80 open so cert-manager HTTP-01 (Gateway API solver) can attach a temp HTTPRoute
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: All
+          # selector:
+          #   matchLabels:
+          #     route-access: "allowed"

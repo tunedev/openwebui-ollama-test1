@@ -1,0 +1,12 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: gateway-api-crds-bootstrap
+  namespace: flux-system
+spec:
+  interval: 10m
+  prune: false
+  sourceRef:
+    kind: GitRepository
+    name: flux-system          
+  path: ./infrastructure/controllers/nginx-gateway-fabric/crds

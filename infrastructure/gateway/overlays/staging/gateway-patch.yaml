@@ -1,0 +1,22 @@
+- op: add
+  path: /metadata/annotations
+  value:
+    cert-manager.io/issuer: letsencrypt-staging
+- op: add
+  path: /spec/gatewayClassName
+  value: nginx
+- op: add
+  path: /spec/listeners/-
+  value:
+    name: https
+    protocol: HTTPS
+    port: 443
+    hostname: staging.testhop.xyz
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+        - kind: Secret
+          name: cert-testshop-xyz

@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      version: 1.18.0
+  values:
+    fullnameOverride: external-dns
+    provider: azure
+    sources:
+      - gateway-httproute
+      - gateway-grpcroute
+    serviceAccount:
+      annotations:
+        azure.workload.identity/client-id: "4af1352f-7d34-45fa-aa82-45e3bc31b930"
+        azure.workload.identity/use: "true"
+    podLabels:
+      azure.workload.identity/use: "true"
+    logLevel: debug
+    domainFilters:
+      - staging.testhop.xyz
+    txtOwnerId: external-dns-staging
+    extraVolumes:
+      - name: azure-config-file
+        secret:
+          secretName: external-dns-azure
+    extraVolumeMounts:
+      - name: azure-config-file
+        mountPath: /etc/kubernetes
+        readOnly: true

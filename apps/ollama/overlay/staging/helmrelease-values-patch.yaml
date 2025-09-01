@@ -1,0 +1,32 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ollama
+  namespace: flux-system
+spec:
+  values:
+    fullnameOverride: ollama
+    ingress:
+      enabled: false
+    ollama:
+      models:
+        pull:
+          - "llama3.2"
+    volumes:
+      - name: models
+        persistentVolumeClaim:
+          claimName: ollama-models
+    volumeMounts:
+      - name: models
+        mountPath: /root/.ollama
+    extraEnv:
+      - name: OLLAMA_KEEP_ALIVE
+        value: "1h"
+    resources:
+      requests:
+        cpu: "500m"
+        memory: "2Gi"
+      limits:
+        cpu: "2"
+        memory: "8Gi"

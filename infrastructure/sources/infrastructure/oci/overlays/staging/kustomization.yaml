@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../oci/base
+patches:
+  - path: cert-manager-patch.yaml
+    target:
+      kind: OCIRepository
+      name: cert-manager
+      namespace: flux-system
+  # - path: external-dns-patch.yaml
+  #   target:
+  #     kind: OCIRepository
+  #     name: external-dns
+  #     namespace: flux-system
+  - path: nginx-gateway-fabric-patch.yaml
+    target:
+      kind: OCIRepository
+      name: nginx-gateway-fabric
+      namespace: flux-system
