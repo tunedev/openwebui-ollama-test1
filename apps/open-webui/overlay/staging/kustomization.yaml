@@ -8,7 +8,7 @@ patches:
       kind: HelmRelease
       name: open-webui
       namespace: flux-system
-  - path: openai-httproute-patch.yaml
+  - path: openwebai-httproute-patch.yaml
     target:
       group: gateway.networking.k8s.io
       version: v1
