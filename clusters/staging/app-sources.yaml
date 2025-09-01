@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./infrastructure/sources/helm/app
+  path: ./infrastructure/sources/app/helm/app
   prune: true
   wait: true
   sourceRef:
