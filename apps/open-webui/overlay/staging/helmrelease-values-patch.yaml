@@ -27,4 +27,6 @@ spec:
       port: 8080
     ollama:
       enabled: false
+    pipelines:
+      enabled: false
       
