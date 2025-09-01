@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      version: open-webui-7.7.0
+      version: 1.18.0
   values:
     fullnameOverride: external-dns
     provider: azure
