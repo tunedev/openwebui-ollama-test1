@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: https://github.com/iheartnathan/ai-workload.git
+  url: https://github.com/iheartnathan/openwebui-ollama-test1.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
