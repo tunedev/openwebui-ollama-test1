@@ -12,4 +12,3 @@ metadata:
   name: open-webui
   labels:
     app.kubernetes.io/part-of: app
-    app.kubernetes.io/part-of: open-webui
