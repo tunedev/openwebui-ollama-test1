@@ -17,7 +17,7 @@ spec:
         pull:
           - "llama3.2"
     persistentVolume:
-      enabled: false
+      enabled: true
       existingClaim: ollama-models
     # volumes:
     #   - name: models
