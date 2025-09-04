@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - pvc-ollama-models.yaml
-  - pvc-open-webui-data.yaml
+  # - pvc-open-webui-data.yaml
