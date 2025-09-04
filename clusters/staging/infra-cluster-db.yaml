@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: db-openwebui
+  name: infra-cluster-db
   namespace: flux-system
 spec:
   path: ./infrastructure/databases/openwebui/base
@@ -13,4 +13,4 @@ spec:
     - name: cloudnative-pg
   sourceRef:
     kind: GitRepository
-    name: flux-systemn
+    name: flux-system
