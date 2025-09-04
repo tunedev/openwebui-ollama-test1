@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cloudnative-pg
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      version: 0.25.0
+  values:
+    replicaCount: 1
+    fullnameOverride: cloudnative-pg

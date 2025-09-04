@@ -1,0 +1,28 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: database
+  namespace: database
+spec:
+  fullnameOverride: database
+  instances: 3
+  imageName: ghcr.io/cloudnative-pg/postgresql:16
+  enableSuperuserAccess: true
+  superuserSecret:
+    name: openwebui-pg-superuser
+  bootstrap:
+    initdb:
+      database: openwebui
+      owner: openwebui
+      secret:
+        name: openwebui-pg-app
+  storage:
+    size: 4Gi
+    storageClass: standard-ssd
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "2Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"

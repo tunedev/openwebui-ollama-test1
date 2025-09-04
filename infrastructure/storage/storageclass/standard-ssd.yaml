@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: standard-ssd
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: disk.csi.azure.com
+parameters:
+  skuName: StandardSSD_LRS
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: Immediate

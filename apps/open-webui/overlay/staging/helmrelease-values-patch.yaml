@@ -46,6 +46,9 @@ spec:
     #     value: "1"
     #   - name: AIOHTTP_CLIENT_TIMEOUT
     #     value: "300"
+    extraEnvVars:
+      - name: DATABASE_URL
+        value: "postgresql://openwebui:openwebui@openwebui-pg-rw.database.svc.cluster.local:5432/openwebui"
     service:
       type: ClusterIP
       port: 8080

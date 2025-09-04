@@ -1,16 +1,16 @@
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: infra-pvc
+  name: db-openwebui
   namespace: flux-system
 spec:
+  path: ./infrastructure/databases/openwebui/base
   interval: 10m
-  path: ./infrastructure/storage/claims/open-webui/overlays/staging
   prune: true
   wait: true
+  dependsOn:
+    - name: cloudnative-pg
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  dependsOn:
-    - name: infra-storageclass
-    
+    name: flux-systemn

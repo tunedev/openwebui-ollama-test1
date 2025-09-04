@@ -11,4 +11,4 @@
 #   resources:
 #     requests:
 #       storage: 15Gi
-#   storageClassName: azurefile
+#   storageClassName: standard-ssd
