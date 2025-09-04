@@ -5,7 +5,7 @@ metadata:
   name: infra-cluster-db
   namespace: flux-system
 spec:
-  path: ./infrastructure/databases/openwebui/base
+  path: ./infrastructure/database/openwebui/base
   interval: 10m
   prune: true
   wait: true
