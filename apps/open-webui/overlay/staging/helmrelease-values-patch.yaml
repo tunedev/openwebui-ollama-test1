@@ -38,7 +38,7 @@ spec:
       size: 10Gi
       accessModes:
         - ReadWriteMany
-      storageClass: default
+      storageClass: azurefile
     websocket:
       enabled: true
     # extraEnvVars:
