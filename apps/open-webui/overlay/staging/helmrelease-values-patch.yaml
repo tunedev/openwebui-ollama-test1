@@ -12,12 +12,36 @@ spec:
     fullnameOverride: open-webui
     ingress:
       enabled: false
+    ollamaUrls:
+          - http://ollama.ollama.svc.cluster.local:11434
+    livenessProbe:
+      httpGet:
+        path: /health
+        port: http
+      failureThreshold: 1
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /health/db
+        port: http
+      failureThreshold: 1
+      periodSeconds: 10
+    startupProbe:
+      httpGet:
+        path: /health
+        port: http
+      initialDelaySeconds: 30
+      periodSeconds: 5
+      failureThreshold: 20
     persistence:
       enabled: true
-      existingClaim: openwebui-data
+      size: 10Gi
+      accessModes:
+        - ReadWriteMany
+      storageClass: default
+    websocket:
+      enabled: true
     extraEnvVars:
-      - name: OLLAMA_BASE_URL
-        value: http://ollama.ollama.svc.cluster.local:11434
       - name: UVICORN_WORKERS
         value: "1"
       - name: AIOHTTP_CLIENT_TIMEOUT
