@@ -41,11 +41,11 @@ spec:
       storageClass: default
     websocket:
       enabled: true
-    extraEnvVars:
-      - name: UVICORN_WORKERS
-        value: "1"
-      - name: AIOHTTP_CLIENT_TIMEOUT
-        value: "300"
+    # extraEnvVars:
+    #   - name: UVICORN_WORKERS
+    #     value: "1"
+    #   - name: AIOHTTP_CLIENT_TIMEOUT
+    #     value: "300"
     service:
       type: ClusterIP
       port: 8080
