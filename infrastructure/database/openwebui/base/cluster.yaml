@@ -18,11 +18,11 @@ spec:
         name: openwebui-pg-app
   storage:
     size: 4Gi
-    storageClass: standard-ssd
+    storageClass: standard
   resources:
     requests:
-      cpu: "500m"
-      memory: "2Gi"
+      cpu: '500m'
+      memory: '2Gi'
     limits:
-      cpu: "2"
-      memory: "4Gi"
+      cpu: '2'
+      memory: '4Gi'
