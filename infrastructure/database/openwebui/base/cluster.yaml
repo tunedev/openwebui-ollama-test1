@@ -10,13 +10,14 @@ spec:
   enableSuperuserAccess: true
   superuserSecret:
     name: openwebui-pg-superuser
-  tolerations:
-    - key: 'dedicated'
-      operator: 'Equal'
-      value: 'ollama'
-      effect: 'NoSchedule'
-  nodeSelector:
-    workload: ollama
+  affinity:
+    nodeSelector:
+      workload: ollama
+    tolerations:
+      - key: 'dedicated'
+        operator: 'Equal'
+        value: 'ollama'
+        effect: 'NoSchedule'
   bootstrap:
     initdb:
       database: openwebui
