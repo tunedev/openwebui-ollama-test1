@@ -15,7 +15,7 @@ spec:
     ollama:
       models:
         pull:
-          - "llama3.2"
+          - 'llama3.2'
     persistentVolume:
       enabled: true
       existingClaim: ollama-models
@@ -28,11 +28,18 @@ spec:
     #     mountPath: /root/.ollama
     extraEnv:
       - name: OLLAMA_KEEP_ALIVE
-        value: "1h"
+        value: '1h'
     resources:
       requests:
-        cpu: "500m"
-        memory: "2Gi"
+        cpu: '500m'
+        memory: '2Gi'
       limits:
-        cpu: "2"
-        memory: "8Gi"
+        cpu: '2'
+        memory: '8Gi'
+    nodeSelector:
+      workload: ollama
+    tolerations:
+      - key: 'dedicated'
+        operator: 'Equal'
+        value: 'ollama'
+        effect: 'NoSchedule'
