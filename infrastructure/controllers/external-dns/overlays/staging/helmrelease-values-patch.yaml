@@ -19,3 +19,8 @@ spec:
     extraArgs:
       - --google-project=ai-pipeline-experiments
     txtOwnerId: external-dns-staging
+    serviceAccount:
+      create: true
+      name: external-dns
+      annotations:
+        iam.gke.io/gcp-service-account: external-dns-sa@ai-pipeline-experiments.iam.gserviceaccount.com
