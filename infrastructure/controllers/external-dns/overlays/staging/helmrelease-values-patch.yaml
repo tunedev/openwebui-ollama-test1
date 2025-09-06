@@ -16,4 +16,6 @@ spec:
     logLevel: debug
     domainFilters:
       - tunedev.xyz
+    extraArgs:
+      - --google-project=ai-pipeline-experiments
     txtOwnerId: external-dns-staging
