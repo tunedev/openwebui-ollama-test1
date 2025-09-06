@@ -13,7 +13,7 @@ spec:
     ingress:
       enabled: false
     ollamaUrls:
-          - http://ollama.ollama.svc.cluster.local:11434
+      - http://ollama.ollama.svc.cluster.local:11434
     livenessProbe:
       httpGet:
         path: /health
@@ -38,7 +38,7 @@ spec:
       size: 10Gi
       accessModes:
         - ReadWriteOnce
-      storageClass: standard-ssd
+      storageClass: standard
     websocket:
       enabled: true
     # extraEnvVars:
@@ -48,7 +48,7 @@ spec:
     #     value: "300"
     extraEnvVars:
       - name: DATABASE_URL
-        value: "postgresql://openwebui:openwebui@database-rw.database.svc.cluster.local:5432/openwebui"
+        value: 'postgresql://openwebui:openwebui@database-rw.database.svc.cluster.local:5432/openwebui'
     service:
       type: ClusterIP
       port: 8080
@@ -56,4 +56,3 @@ spec:
       enabled: false
     pipelines:
       enabled: false
-      

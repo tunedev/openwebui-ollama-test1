@@ -6,9 +6,9 @@ metadata:
   labels:
     app.kubernetes.io/part-of: app
 spec:
-  accessModes: 
+  accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 15Gi
-  storageClassName: standard-ssd
+  storageClassName: standard
