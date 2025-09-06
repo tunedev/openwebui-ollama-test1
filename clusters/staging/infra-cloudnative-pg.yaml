@@ -11,6 +11,4 @@ spec:
     name: flux-system
   path: ./infrastructure/controllers/cloudnative-pg/overlays/staging
   dependsOn:
-    - name: infra-storageclass
     - name: infra-sources-helm
-    
