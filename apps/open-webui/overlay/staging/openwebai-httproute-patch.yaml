@@ -1,4 +1,4 @@
 - op: add
   path: /spec/hostnames
   value:
-    - staging.testhop.xyz
+    - tunedev.xyz

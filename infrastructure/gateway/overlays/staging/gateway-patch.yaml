@@ -11,7 +11,7 @@
     name: https
     protocol: HTTPS
     port: 443
-    hostname: staging.testhop.xyz
+    hostname: tunedev.xyz
     allowedRoutes:
       namespaces:
         from: All
@@ -19,4 +19,4 @@
       mode: Terminate
       certificateRefs:
         - kind: Secret
-          name: cert-testshop-xyz
+          name: cert-tunedev-xyz
